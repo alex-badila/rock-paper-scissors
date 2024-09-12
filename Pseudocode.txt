@@ -1,0 +1,46 @@
+getComputerChoice
+Create an integer between 1 and 3
+If the number is 1:
+	return "rock"
+If the number is 2:
+	return "paper"
+If the number is 3:
+	return "scissors"
+
+getHumanChoice
+Make a prompt asking to choose between rock, paper, or scissors
+If the answer is rock or paper or scissors:
+	Return the answer
+Else:
+	Say "Invalid input"
+
+playRound
+Take in humanChoice and computerChoice
+Lowercase both values
+If humanChoice is rock and computerChoice is paper:
+	computer wins
+	increment computerScore and return message
+Else if humanChoice is rock and computerChoice is scissors:
+	human wins
+	increment humanScore and return message
+Else if humanChoice is rock and computerChoice is rock:
+	tie game
+	return message
+Else if humanChoice is paper and computerChoice is rock:
+	human wins
+	increment humanScore and return message
+Else if humanChoice is paper and computerChoice is scissors:
+	computer wins
+	increment computerScore and return message
+Else if humanChoice is paper and computerChoice is paper:
+	tie game
+	return message
+Else if humanChoice is scissors and computerChoice is paper:
+	human wins	
+	increment humanScore and return message
+Else if humanChoice is scissors and computerChoice is rock:
+	computer wins
+	increment computerScore and return message
+Else
+	tie game
+	return message 
