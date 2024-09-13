@@ -43,4 +43,13 @@ Else if humanChoice is scissors and computerChoice is rock:
 	increment computerScore and return message
 Else
 	tie game
-	return message 
+	return message
+
+playGame
+Declare the two score variables and initialize them to 0
+Create a counter for the loop
+while the counter is smaller than 5:
+	playRound
+If the total human score is higher than the computer score, say "You win!"
+If it is less than the computer score, say "You lose!"
+If it is the same, say "It's a tie!"
