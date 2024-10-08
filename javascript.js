@@ -22,12 +22,16 @@ const playGame = () => {
 
     
     let button = document.querySelectorAll(".btn");
+    let container = document.getElementById("container");
 
     // Add an event listener for all three buttons
     // If one of them is clicked, play a round with the computer
     button.forEach(item => {
         item.addEventListener('click', event => {
-            console.log(playRound(item.textContent, getComputerChoice()));
+            let result = playRound(item.textContent, getComputerChoice());
+            let para = document.createElement("p");
+            para.textContent = result;
+            container.appendChild(para);
         })
     })
 
