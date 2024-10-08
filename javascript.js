@@ -15,26 +15,23 @@ const getComputerChoice = () => {
     }
 }
 
-const getHumanChoice = () => {
-    // Prompt the user for the choice
-    let humanChoice = prompt("Choose between rock, paper, or scissors.")
-    // If it's a valid choice, return
-    // Else flag it as invalid input
-    if(humanChoice == "rock" || humanChoice == "paper" || humanChoice == "scissors") {
-        return humanChoice;
-    }
-    else {
-        return "Invalid input";
-    }
-}
-
 const playGame = () => {
     // Declare the variables for the score and initialize them to 0
     let humanScore = 0;
     let computerScore = 0;
 
-    // Declare a counter for the loop
-    let counter = 0;
+    
+    let button = document.querySelectorAll(".btn");
+
+    // Add an event listener for all three buttons
+    // If one of them is clicked, play a round with the computer
+    button.forEach(item => {
+        item.addEventListener('click', event => {
+            console.log(playRound(item.textContent, getComputerChoice()));
+        })
+    })
+
+
 
     // Declare playRound as a function inside playGame
     const playRound = (humanChoice, computerChoice) => {
@@ -83,25 +80,7 @@ const playGame = () => {
         }
     }
 
-    // Loop through playRound 5 times
-    while(counter < 5) {
-        // Get the choices from the humand and the computer
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-
-        console.log(playRound(humanChoice, computerChoice));
-        counter++;
-    }
-
-    if(humanScore > computerScore) {
-        console.log("You win!")
-    }
-    else if(humanScore < computerScore) {
-        console.log("You lose!")
-    }
-    else {
-        console.log("It's a tie!")
-    }
+    
 }
 
 playGame();
