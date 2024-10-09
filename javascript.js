@@ -32,10 +32,22 @@ const playGame = () => {
             let para = document.createElement("p");
             para.textContent = result;
             container.appendChild(para);
+
+            // Announce the winner once someone reaches the score of 5
+            if(humanScore == 5) {
+                let win_para = document.createElement("p");
+                win_para.textContent = "Congratulations! You win!";
+                container.appendChild(win_para);
+            }
+            else if(computerScore == 5) {
+                let lose_para = document.createElement("p");
+                lose_para.textContent = "Sorry! You lose!";
+                container.appendChild(lose_para);
+            }
         })
     })
 
-
+    
 
     // Declare playRound as a function inside playGame
     const playRound = (humanChoice, computerChoice) => {
@@ -48,36 +60,36 @@ const playGame = () => {
         // Then increment the corresponding score and return the appropriate string
         if(humanChoice == "rock" && computerChoice == "paper") {
             computerScore++;
-            return "You lose! Paper beats rock!";
+            return `You lose! Paper beats rock! Human: ${humanScore} Computer: ${computerScore}`;
         }
         else if(humanChoice == "rock" && computerChoice == "scissors") {
             humanScore++;
-            return "You win! Rock beats scissors!";
+            return `You win! Rock beats scissors! Human: ${humanScore} Computer: ${computerScore}`;
         }
         else if(humanChoice == "rock" && computerChoice == "rock") {
-            return "Tie game!";
+            return `Tie game! Human: ${humanScore} Computer: ${computerScore}`;
         }
         else if(humanChoice == "paper" && computerChoice == "scissors") {
             computerScore++;
-            return "You lose! Scissors beats paper!";
+            return `You lose! Scissors beats paper! Human: ${humanScore} Computer: ${computerScore}`;
         }
         else if(humanChoice == "paper" && computerChoice == "rock") {
             humanScore++;
-            return "You win! Paper beats rock!";
+            return `You win! Paper beats rock! Human: ${humanScore} Computer: ${computerScore}`;
         }
         else if(humanChoice == "paper" && computerChoice == "paper") {
-            return "Tie game!";
+            return `Tie game! Human: ${humanScore} Computer: ${computerScore}`;
         }
         else if(humanChoice == "scissors" && computerChoice == "rock") {
             computerScore++;
-            return "You lose! Rock beats scissors!";
+            return `You lose! Rock beats scissors! Human: ${humanScore} Computer: ${computerScore}`;
         }
         else if(humanChoice == "scissors" && computerChoice == "paper") {
             humanScore++;
-            return "You win! Scissors beats paper!";
+            return `You win! Scissors beats paper! Human: ${humanScore} Computer: ${computerScore}`;
         }
         else if(humanChoice == "scissors" && computerChoice == "scissors") {
-            return "Tie game!";
+            return `Tie game! Human: ${humanScore} Computer: ${computerScore}`;
         }
         else {
             return "Invalid input";
